@@ -42,7 +42,6 @@
     - name: "Set Public Subnet ID in variable"
       set_fact: 
         public_subnet_id: "{{ my_public_subnet.subnet.id }}"
-	
     - name: "Create Internet Gateway for VPC"
       ec2_vpc_igw: 
         aws_access_key: "{{ aws_access_key }}"
@@ -55,7 +54,6 @@
     - name: "Set Internet Gateway ID in a variable"
       set_fact: 
         igw_id: "{{ my_vpc_igw.gateway_id }}"
-	
     - name: "Set up public subnet route table"
       ec2_vpc_route_table: 
         vpc_id: "{{ vpc_id }}"
@@ -82,7 +80,6 @@
           from_port: "22"
           proto: tcp
           to_port: "22"
-	  
     - name: "Create an ec2 instance"
       ec2:
         key_name: "{{ keypair }}"
