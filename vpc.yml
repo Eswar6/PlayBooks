@@ -26,7 +26,6 @@
     - name: "set fact VPC ID"
       set_fact: 
         vpc_id: "{{ my_vpc.vpc.id }}"
-	
     - name: "Create Public Subnet"
       ec2_vpc_subnet: 
         state: present
